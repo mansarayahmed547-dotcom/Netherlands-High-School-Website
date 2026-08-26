@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra Leone Netherlands Friendship International High School</title>
+    <style>
+        :root {
+            --primary: #0d3b66;
+            --secondary: #f4d35e;
+            --accent: #9b2226;
+            --dark: #333333;
+            --light: #f8f9fa;
+        }
+
+        .gallery-container, .hero-banner {
+            text-align: center;
+         width: 1200px;
+         margin-left:auto ;
+         margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px ;
+        }
+        .photo-card{
+            display: inline-block;
+            vertical-align: top;
+            width: 250px;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            padding: 12px 12px 18px 12px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .photo-card img{
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .photo-card p{
+            margin-top: 8px;
+            font-size: 12px;
+            color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-area h1 {
+            font-size: 1.25rem;
+        }
+
+        .logo-area p {
+            font-size: 0.8rem;
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(13, 59, 102, 0.85), rgba(13, 59, 102, 0.85)), url('1000614341.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .info-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .info-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <h1>SL Netherlands Friendship Int. High School</h1>
+                <p>Rokel, Sierra Leone | Excellence in Education</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#languages">Languages & ICT</a></li>
+                    <li><a href="#admissions">Hours & Fees</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <h2>Welcome to Sierra Leone Neetherlands Friendship International High School!</h2>
+        <p>We are delighted to welcome you to our official portal</p>
+        <p>Where you can have the oppoortunity to step into a world of endless possibilities, academic distinction, and loving guidance. From Nursery to SSS3, we nurture every child's unique spark with quality teaching, zero exam malpractice, international languages, and a modern ICT lab in a warm, friendly community.</p>
+    </section>
+
+    <div class="container">
+
+        <!-- About / Excellence Section -->
+        <section id="about">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="1000614341.jpg" alt="Students at school">
+                    <div class="card-body">
+                        <h3>Academic Excellence</h3>
+                        <p>We maintain high educational standards, dedicated instruction, and structured learning pathways designed to help every student thrive academically.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="1000614332.jpg" alt="School Staff">
+                    <div class="card-body">
+                        <h3>Qualified & Professional Staff</h3>
+                        <p>Our teachers are experienced, highly qualified, and committed to mentoring students with a strong focus on discipline and character building.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="1000614338.jpg" alt="Exams in Session">
+                    <div class="card-body">
+                        <h3>Strict Zero-Malpractice System</h3>
+                        <p>We uphold a pristine standard exam system with strict integrity rules. We are proud of our record of zero examination malpractice so far.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Streams & Classes -->
+        <section id="academics">
+            <h2 class="section-title">From Nursery-SSS3</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="1000614309.jpg" alt="Classrooms">
+                    <div class="card-body">
+                        <h3>Educational Levels</h3>
+                        <p>Comprehensive learning structures spanning from early childhood education (Nursery & Primary) through Junior Secondary School (JSS) up to Senior Secondary School (SSS3).</p>
+                        <p>We have NPSE School of choices, Sit BECE and WASSCE Exams</p>
+                        <p>In Due Time, We'll have NPSE,BECE and WASSCE Centre</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="1000614344.jpg" alt="Student achievements">
+                    <div class="card-body">
+                        <h3>Senior Secondary Streams</h3>
+                        <p>We offer specialized departmental choices tailored to student career aspirations:</p>
+                        <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+                            <li>Science Department</li>
+                            <li>Commercial Department</li>
+                            <li>Arts Streams</li>
+                            <li>Tailoring Department</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages & ICT Labs -->
+        <section id="languages">
+            <h2 class="section-title">Specialized Programs & ICT Lab</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="1000614331.jpg" alt="School Event">
+                    <div class="card-body">
+                        <h3> We Teacher International Languages</h3>
+                        <p>Like Chinese, French and Dutch Language Annually </p>
+                        <p>To broaden global horizons, we offer yearly language training programs including <strong>French</strong>, <strong>Dutch</strong>, and <strong>Chinese</strong>.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="1000631042.jpg" alt="Students learning">
+                    <div class="card-body">
+                        <h3>Functional ICT Lab</h3>
+                        <p>Our modern, fully functional ICT laboratory equips students with essential digital, computer literacy, and modern technological skills for the future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Hours & Fees -->
+        <section id="admissions">
+            <h2 class="section-title">School Hours & Affordability</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>School Days</h4>
+                    <p>Monday to Friday</p>
+                </div>
+                <div class="info-box">
+                    <h4>Instruction Hours</h4>
+                    <p>7:00 AM to 3:00 PM</p>
+                </div>
+                <div class="info-box">
+                    <h4>Fees & Tuition</h4>
+                    <p>Very reasonable and affordable fee structures structured to ensure quality education remains accessible.</p>
+                </div>
+            </div>
+            
+    <div class="gallery-container">
+        <!--Photo 1-->
+        <div class="photo-card">
+            <img src="image/1785172563598.png" alt="BECE Student">
+            <p><strong>Students With Their Lovely teacher after the BECE Examination 2026</strong> </p>
+        </div>
+        <!--Photo 2-->
+        <div class="photo-card">
+            <img src="image/IMG-20250626-WA0004(1).jpg" alt="">
+            <p><strong>First Day of BECE 2025: Students with the Director</strong> </p>
+        </div>
+         <!--Photo 3-->
+         <div class="photo-card">
+            <img src="image/IMG-20250626-WA0007.jpg" alt="">
+            <p><strong>Students Excited For a Fuccessful BECE Exam 2025</strong></p>
+         </div>
+           <!--Photo 4-->
+           <div class="photo-card">
+            <img src="image/IMG-20250815-WA0050.jpg" alt="">
+            <p><strong>Students In The Exam Hall, Taking Their First Term Test(JSS2)</strong></p>
+
+           </div>
+             <!--Photo 5-->
+             <div class="photo-card">
+                <img src="image/IMG-20250815-WA0053.jpg" alt="">
+                <p><strong>Students Celeberating 2025 Foundation Day</strong></p>
+
+             </div>
+               <!--Photo 6-->
+               <div class="photo-card">
+                <img src="image/IMG-20250815-WA0052.jpg" alt="">
+                <p><strong>Our 2025 WASSCE Students Excited Heading To Their First paper.</strong></p>
+               </div>
+                 <!--Photo 7-->
+                 <div class="photo-card">
+                    <img src="image/IMG-20260302-WA0044.jpg" alt="">
+                    <p><strong>Director Assessing Students In Spelling</strong></p>
+                 </div>
+    </div>
+        </section>
+
+        <!-- Contact Section with exact details provided -->
+        <section id="contact">
+            <h2 class="section-title">Contact Information & Location</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>School Address</h4>
+                    <p>#1 Poultry Road, railway line, Rokel (Back of R.E.C. Primary School Whitetank, Rokel)</p>
+                </div>
+                <div class="info-box">
+                    <h4>Phone Numbers</h4>
+                    <p>+232 32 838389<br>+232 30 459410<br>+23233 285499</p>
+                </div>
+                <div class="info-box">
+                    <h4>Connect Online</h4>
+                    <p>
+                        <a href="https://chat.whatsapp.com/JJ0So4SW7TY0rH3IiswDpS?s=cl&p=a&mlu=4" target="_blank">Join WhatsApp Group</a><br><br>
+                        <a href="https://www.facebook.com/share/19Xw47iLKe/" target="_blank">Visit Facebook Page</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sierra Leone Netherlands Friendship International High School. All Rights Reserved.</p>
+        <p>#1 Poultry Road, railway line, Rokel, Sierra Leone</p>
+    </footer>
+
+</body>
+</html>
